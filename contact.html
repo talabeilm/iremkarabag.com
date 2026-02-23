@@ -1,0 +1,179 @@
+---
+layout: default
+title: Contact
+permalink: /contact/
+---
+
+<div class="page-header">
+  <h1>Contact</h1>
+  <p>Get in touch with me about research, collaboration, or speaking opportunities.</p>
+</div>
+
+<div class="contact-container">
+  <div class="contact-info">
+    <h2>Contact Information</h2>
+    
+    <div class="info-item">
+      <h3>Email</h3>
+      <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+    </div>
+    
+    <div class="info-item">
+      <h3>Office</h3>
+      <p>
+        [Building Name], Room [Number]<br>
+        [Department Name]<br>
+        [University Name]<br>
+        [City, State ZIP]
+      </p>
+    </div>
+    
+    <div class="info-item">
+      <h3>Office Hours</h3>
+      <p>
+        Tuesdays: 2:00 PM - 4:00 PM<br>
+        Thursdays: 10:00 AM - 12:00 PM<br>
+        Or by appointment
+      </p>
+    </div>
+    
+    <div class="info-item">
+      <h3>Connect Online</h3>
+      <ul class="social-links">
+        {% if site.twitter_username %}
+        <li><a href="https://twitter.com/{{ site.twitter_username }}" target="_blank">Twitter</a></li>
+        {% endif %}
+        {% if site.github_username %}
+        <li><a href="https://github.com/{{ site.github_username }}" target="_blank">GitHub</a></li>
+        {% endif %}
+        {% if site.linkedin_username %}
+        <li><a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank">LinkedIn</a></li>
+        {% endif %}
+        {% if site.google_scholar %}
+        <li><a href="https://scholar.google.com/citations?user={{ site.google_scholar }}" target="_blank">Google Scholar</a></li>
+        {% endif %}
+        {% if site.orcid %}
+        <li><a href="https://orcid.org/{{ site.orcid }}" target="_blank">ORCID</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+  
+  <div class="contact-form-section">
+    <h2>Send a Message</h2>
+    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="_replyto" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+      </div>
+      
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+    <p class="form-note">
+      <strong>Note:</strong> To enable this form, sign up for a free account at 
+      <a href="https://formspree.io" target="_blank">Formspree</a> and replace 
+      YOUR_FORM_ID in the form action with your actual form ID.
+    </p>
+  </div>
+</div>
+
+<style>
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-info h2,
+.contact-form-section h2 {
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+.info-item {
+  margin-bottom: 2rem;
+}
+
+.info-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--secondary-color);
+}
+
+.info-item p {
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.social-links {
+  list-style: none;
+  padding: 0;
+}
+
+.social-links li {
+  margin-bottom: 0.5rem;
+}
+
+.contact-form {
+  background-color: var(--bg-light);
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+}
+
+.form-note {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

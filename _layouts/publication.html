@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+<article class="publication-page">
+  <header class="publication-header">
+    <h1>{{ page.title }}</h1>
+    <p class="publication-meta">
+      {{ page.authors }}<br>
+      <em>{{ page.venue }}</em>{% if page.volume %}, {{ page.volume }}{% endif %}{% if page.pages %}, {{ page.pages }}{% endif %}<br>
+      {{ page.date | date: "%Y" }}
+    </p>
+    
+    <div class="publication-links">
+      {% if page.pdf %}
+      <a href="{{ page.pdf }}" class="btn" target="_blank">PDF</a>
+      {% endif %}
+      {% if page.doi %}
+      <a href="https://doi.org/{{ page.doi }}" class="btn" target="_blank">DOI</a>
+      {% endif %}
+      {% if page.arxiv %}
+      <a href="https://arxiv.org/abs/{{ page.arxiv }}" class="btn" target="_blank">arXiv</a>
+      {% endif %}
+      {% if page.code %}
+      <a href="{{ page.code }}" class="btn" target="_blank">Code</a>
+      {% endif %}
+      {% if page.data %}
+      <a href="{{ page.data }}" class="btn" target="_blank">Data</a>
+      {% endif %}
+    </div>
+  </header>
+  
+  {% if page.abstract %}
+  <section class="publication-abstract">
+    <h2>Abstract</h2>
+    <p>{{ page.abstract }}</p>
+  </section>
+  {% endif %}
+  
+  <section class="publication-content">
+    {{ content }}
+  </section>
+  
+  {% if page.citation %}
+  <section class="publication-citation">
+    <h2>Citation</h2>
+    <pre><code>{{ page.citation }}</code></pre>
+  </section>
+  {% endif %}
+</article>

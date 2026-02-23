@@ -1,0 +1,61 @@
+---
+layout: default
+---
+
+<article class="project-page">
+  <header class="project-header">
+    <h1>{{ page.title }}</h1>
+    {% if page.image %}
+    <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="project-hero-image">
+    {% endif %}
+    <p class="project-meta">
+      {% if page.status %}<span class="project-status">{{ page.status }}</span>{% endif %}
+      {% if page.duration %} | {{ page.duration }}{% endif %}
+      {% if page.funding %} | Funded by: {{ page.funding }}{% endif %}
+    </p>
+  </header>
+  
+  {% if page.description %}
+  <section class="project-description">
+    <h2>Overview</h2>
+    <p>{{ page.description }}</p>
+  </section>
+  {% endif %}
+  
+  <section class="project-content">
+    {{ content }}
+  </section>
+  
+  {% if page.collaborators %}
+  <section class="project-collaborators">
+    <h2>Collaborators</h2>
+    <ul>
+      {% for collaborator in page.collaborators %}
+      <li>{{ collaborator }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+  
+  {% if page.publications %}
+  <section class="project-publications">
+    <h2>Related Publications</h2>
+    <ul>
+      {% for pub in page.publications %}
+      <li><a href="{{ pub }}">{{ pub }}</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+  
+  {% if page.links %}
+  <section class="project-links">
+    <h2>Links</h2>
+    <div class="btn-group">
+      {% for link in page.links %}
+      <a href="{{ link.url }}" class="btn" target="_blank">{{ link.name }}</a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+</article>

@@ -1,0 +1,99 @@
+---
+layout: default
+title: Research Projects
+permalink: /projects/
+---
+
+<div class="page-header">
+  <h1>Research Projects</h1>
+  <p>Current and past research projects exploring {{ site.description }}</p>
+</div>
+
+<div class="projects-filter">
+  <button class="filter-btn active" data-filter="all">All Projects</button>
+  <button class="filter-btn" data-filter="active">Active</button>
+  <button class="filter-btn" data-filter="completed">Completed</button>
+</div>
+
+<div class="projects-grid">
+  {% for project in site.projects %}
+  <div class="project-card" data-status="{{ project.status | downcase }}">
+    {% if project.image %}
+    <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+    {% endif %}
+    <div class="project-card-content">
+      {% if project.status %}
+      <span class="project-status">{{ project.status }}</span>
+      {% endif %}
+      <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+      <p>{{ project.description | truncatewords: 30 }}</p>
+      {% if project.duration %}
+      <p class="project-duration">{{ project.duration }}</p>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<style>
+.projects-filter {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.6rem 1.2rem;
+  background-color: var(--bg-light);
+  color: var(--text-color);
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: var(--secondary-color);
+  color: white;
+  border-color: var(--secondary-color);
+}
+
+.project-card-content {
+  padding: 1rem;
+}
+
+.project-duration {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-top: 0.5rem;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      // Update active button
+      filterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      
+      const filter = this.getAttribute('data-filter');
+      
+      projectCards.forEach(card => {
+        if (filter === 'all') {
+          card.style.display = 'block';
+        } else {
+          const status = card.getAttribute('data-status');
+          card.style.display = status === filter ? 'block' : 'none';
+        }
+      });
+    });
+  });
+});
+</script>

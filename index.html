@@ -1,0 +1,92 @@
+---
+layout: default
+title: Home
+---
+
+<div class="home-hero">
+  <div class="hero-content">
+    <h1>{{ site.title }}</h1>
+    <p class="lead">{{ site.description }}</p>
+    <div class="hero-links">
+      {% if site.google_scholar %}
+      <a href="https://scholar.google.com/citations?user={{ site.google_scholar }}" target="_blank" class="btn">Google Scholar</a>
+      {% endif %}
+      {% if site.orcid %}
+      <a href="https://orcid.org/{{ site.orcid }}" target="_blank" class="btn">ORCID</a>
+      {% endif %}
+      <a href="{{ '/cv.pdf' | relative_url }}" class="btn">Download CV</a>
+    </div>
+  </div>
+</div>
+
+<section class="home-section">
+  <h2>About</h2>
+  <div class="about-content">
+    <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Profile Photo" class="profile-photo">
+    <div class="about-text">
+      <p>
+        I am an Assistant Professor of [Your Field] at [Your University], where I research 
+        [your research interests]. My work focuses on [specific areas], with particular emphasis 
+        on [key themes].
+      </p>
+      <p>
+        Before joining [University], I completed my PhD at [PhD Institution] under the supervision 
+        of [Advisor Name]. My dissertation examined [dissertation topic].
+      </p>
+      <p>
+        <strong>Research Interests:</strong> [Interest 1], [Interest 2], [Interest 3], [Interest 4]
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="home-section">
+  <h2>Recent Publications</h2>
+  <div class="publications-list">
+    {% assign recent_pubs = site.publications | sort: 'date' | reverse | limit: 3 %}
+    {% for pub in recent_pubs %}
+    <div class="publication-item">
+      <h3><a href="{{ pub.url | relative_url }}">{{ pub.title }}</a></h3>
+      <p class="publication-meta">
+        {{ pub.authors }} ({{ pub.date | date: "%Y" }}). 
+        <em>{{ pub.venue }}</em>{% if pub.volume %}, {{ pub.volume }}{% endif %}{% if pub.pages %}, {{ pub.pages }}{% endif %}.
+      </p>
+      {% if pub.abstract %}
+      <p class="publication-abstract">{{ pub.abstract | truncatewords: 30 }}</p>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  <p class="view-all"><a href="{{ '/publications/' | relative_url }}">View all publications →</a></p>
+</section>
+
+<section class="home-section">
+  <h2>Current Projects</h2>
+  <div class="projects-grid">
+    {% assign featured_projects = site.projects | where: "featured", true | limit: 3 %}
+    {% for project in featured_projects %}
+    <div class="project-card">
+      {% if project.image %}
+      <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+      {% endif %}
+      <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+      <p>{{ project.description | truncatewords: 25 }}</p>
+    </div>
+    {% endfor %}
+  </div>
+  <p class="view-all"><a href="{{ '/projects/' | relative_url }}">View all projects →</a></p>
+</section>
+
+<section class="home-section">
+  <h2>Recent Blog Posts</h2>
+  <div class="posts-list">
+    {% for post in site.posts limit: 3 %}
+    <div class="post-item">
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <p class="post-meta">{{ post.date | date: "%B %d, %Y" }}</p>
+      <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+    </div>
+    {% endfor %}
+  </div>
+  <p class="view-all"><a href="{{ '/blog/' | relative_url }}">View all posts →</a></p>
+</section>
