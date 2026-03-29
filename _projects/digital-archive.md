@@ -1,59 +1,53 @@
 ---
 layout: project
-title: "Digital Archive of Historical Manuscripts"
-description: "Building a comprehensive digital archive of 18th-century manuscripts with advanced search and analysis capabilities."
+title: "Voices of Resistance Archive"
+description: "A digital archive of activist literature, oral histories, and community narratives documenting social justice movements in immigrant communities across Canada."
 status: "Active"
 duration: "2023 - Present"
-funding: "National Endowment for the Humanities"
+funding: "Social Sciences and Humanities Research Council (SSHRC)"
 image: "/assets/images/project-archive.jpg"
 featured: true
 collaborators:
-  - "Dr. Jane Smith, University of Toronto"
-  - "Dr. Robert Johnson, McGill University"
-  - "Digital Humanities Lab Team"
+  - "Dr. Amina Youssef, University of Toronto"
+  - "Dr. Carlos Mendes, Ryerson University"
+  - "Toronto Public Library, Special Collections"
 links:
   - name: "Project Website"
-    url: "https://example.com/project"
-  - name: "GitHub Repository"
-    url: "https://github.com/yourusername/archive"
+    url: "https://example.com/voices-of-resistance"
+  - name: "Digital Collection"
+    url: "https://example.com/voices-collection"
 ---
 
 ## Project Overview
 
-This multi-year project aims to digitize and make accessible a collection of over 10,000 historical manuscripts from the 18th century. Beyond simple digitization, we are developing advanced computational tools for:
+The Voices of Resistance Archive is a community-partnered digital humanities project that collects, preserves, and makes accessible the activist literature and oral histories of immigrant communities in Canada. The archive documents grassroots social justice movements from the 1970s to the present, focusing on language rights campaigns, anti-racism organizing, and community literacy efforts.
 
-- Automated transcription using machine learning
-- Named entity recognition and linking
-- Network analysis of historical correspondence
-- Interactive visualization of temporal and geographical data
+We are building a publicly accessible digital platform that includes:
+
+- Digitized pamphlets, zines, and activist publications
+- Recorded and transcribed oral histories from community organizers
+- Annotated literary works by immigrant activist-writers
+- Interactive timelines of social justice milestones
 
 ## Methodology
 
-Our approach combines traditional archival methods with cutting-edge digital humanities techniques:
+Our approach centres community participation at every stage:
 
-1. **Digitization**: High-resolution imaging of manuscripts
-2. **Metadata Creation**: Comprehensive cataloging following TEI standards
-3. **Computational Analysis**: ML-based transcription and analysis
-4. **Public Access**: Web-based interface for researchers and public
+1. **Community Partnerships**: Working directly with immigrant-serving organizations to identify materials and narrators
+2. **Oral History Collection**: Recording life stories using trauma-informed, participant-led interview methods
+3. **Digitization & Annotation**: Preserving physical materials and adding scholarly and community context
+4. **Public Access**: Building an open-access digital platform with multilingual navigation
 
 ## Current Progress
 
-- ✅ Phase 1: Digitization complete (3,500 manuscripts)
-- 🔄 Phase 2: Transcription and metadata (in progress)
-- ⏳ Phase 3: Analysis tools (planned for 2025)
-- ⏳ Phase 4: Public launch (planned for 2026)
+- Phase 1: Community partnerships and pilot interviews complete (42 oral histories recorded)
+- Phase 2: Digitization of print materials in progress (1,200+ items catalogued)
+- Phase 3: Digital platform development (launching 2026)
 
 ## Impact
 
-This project will provide unprecedented access to historical materials and serve as a model for similar digital archive initiatives. We are collaborating with libraries and archives internationally to share our methodologies and tools.
-
-## Publications
-
-This project has resulted in several publications:
-
-- Smith, J., & Your Name (2024). "Automated Transcription of Historical Manuscripts." *Digital Humanities Quarterly*
-- Your Name et al. (2023). "Building Sustainable Digital Archives." *DHQ*
+This archive will serve as a resource for scholars, educators, students, and community members. It addresses a significant gap in Canadian cultural archives by centering the voices of those who have been most active in — yet often excluded from — the historical record.
 
 ## Get Involved
 
-We welcome collaborators and are happy to discuss the project with interested researchers. Contact us at [project-email@university.edu].
+We welcome volunteers for transcription, translation, and community outreach. If you have materials related to immigrant activist movements in Canada, please [contact us](mailto:ikarabag@yorku.ca).

@@ -1,0 +1,153 @@
+---
+layout: default
+title: Activism
+permalink: /activism/
+---
+
+<div class="page-header">
+  <h1>Activism</h1>
+  <p>Working toward equity, literacy, and justice through community engagement and advocacy.</p>
+</div>
+
+<section class="activism-section">
+  <h2>My Approach</h2>
+  <p>
+    I believe that scholarship and activism are inseparable. My work in the community grows directly
+    from my research on language, identity, and power. Whether advocating for immigrant language rights,
+    building literacy programs, or pushing for equity in education, I draw on the same conviction:
+    that stories and languages carry the power to transform lives and systems.
+  </p>
+</section>
+
+<section class="activism-section">
+  <h2>Initiatives</h2>
+  <div class="activism-grid">
+    <div class="activism-card">
+      <h3>Community Literacy Programs</h3>
+      <p>
+        I co-founded and direct a community literacy initiative in Toronto that offers free reading,
+        writing, and storytelling workshops for newcomer families. The program operates in partnership
+        with local libraries and settlement agencies, serving over 200 participants each year.
+      </p>
+    </div>
+
+    <div class="activism-card">
+      <h3>Language Rights Advocacy</h3>
+      <p>
+        As a member of the Ontario Language Rights Coalition, I advocate for policies that protect
+        the linguistic rights of immigrant and refugee communities. This includes lobbying for
+        multilingual public services, heritage language education funding, and fair language
+        assessment practices.
+      </p>
+    </div>
+
+    <div class="activism-card">
+      <h3>Equity in Education</h3>
+      <p>
+        I work with York University's Centre for Human Rights, Equity and Inclusion on campaigns
+        to address systemic barriers in higher education. Recent efforts focus on inclusive
+        curriculum design, anti-racist pedagogy workshops, and mentorship programs for
+        first-generation students.
+      </p>
+    </div>
+
+    <div class="activism-card">
+      <h3>Speaking & Community Events</h3>
+      <p>
+        I regularly speak at community forums, school boards, and public panels on topics including
+        the politics of language, literature as resistance, and building inclusive classrooms.
+        I also organize the annual "Words & Justice" symposium at York University, bringing together
+        scholars, writers, and activists.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="activism-section">
+  <h2>Get Involved</h2>
+  <p>
+    If you are interested in volunteering, collaborating, or learning more about any of these
+    initiatives, please <a href="{{ '/contact/' | relative_url }}">get in touch</a>. I am always
+    looking for partners — whether community organizations, fellow educators, or students eager to
+    make a difference.
+  </p>
+</section>
+
+<style>
+.activism-section {
+  margin-bottom: 3rem;
+}
+
+.activism-section h2 {
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  padding-bottom: 0.75rem;
+  position: relative;
+  border-bottom: none;
+}
+
+.activism-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: var(--gradient-accent);
+  border-radius: 2px;
+}
+
+.activism-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.activism-card {
+  padding: 1.5rem;
+  background-color: var(--bg-light);
+  border-radius: 8px;
+  border-left: none;
+  border-top: 5px solid var(--secondary-color);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-snappy), box-shadow var(--transition-snappy);
+  position: relative;
+  overflow: hidden;
+}
+
+.activism-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--gradient-accent);
+  transition: width var(--transition-snappy);
+}
+
+.activism-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.activism-card:hover::after {
+  width: 100%;
+}
+
+.activism-card h3 {
+  margin-bottom: 0.75rem;
+  color: var(--primary-color);
+}
+
+.activism-card p {
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .activism-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

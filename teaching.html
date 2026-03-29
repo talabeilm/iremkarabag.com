@@ -12,38 +12,47 @@ permalink: /teaching/
 <section class="teaching-section">
   <h2>Teaching Philosophy</h2>
   <p>
-    I believe in creating an inclusive, engaging learning environment that emphasizes 
-    critical thinking and practical application. My teaching approach combines theoretical 
-    foundations with hands-on experience, encouraging students to become independent 
-    researchers and thoughtful practitioners in their field.
+    My teaching is grounded in critical pedagogy and a commitment to equity. I design my courses
+    to center diverse voices and to challenge students to examine how language and literature
+    intersect with power, identity, and justice. I believe every student brings valuable knowledge
+    to the classroom, and my role is to create a space where those perspectives are heard, questioned,
+    and deepened through rigorous engagement with texts and ideas.
+  </p>
+  <p>
+    Whether in an introductory survey or an advanced seminar, I emphasize close reading, collaborative
+    discussion, and writing as a tool for critical thought and social reflection. I encourage students
+    to connect literary analysis to the world beyond the university — to see reading and writing as
+    acts with real stakes.
   </p>
 </section>
 
 <section class="teaching-section">
   <h2>Current Courses</h2>
-  
+
   <div class="course-list">
     <div class="course-item">
-      <h3>COURSE 101: Introduction to [Subject]</h3>
-      <p class="course-meta">Fall 2025 | Undergraduate Level</p>
+      <h3>EN 1001: Introduction to English Literature</h3>
+      <p class="course-meta">Fall 2025 | Undergraduate</p>
       <p>
-        An introductory course covering fundamental concepts in [subject area]. 
-        Students learn foundational theories and methodologies through lectures, 
-        discussions, and hands-on projects.
+        A survey of major works in English literature from the early modern period to the present.
+        Students develop skills in close reading, critical writing, and literary analysis while
+        exploring how literature reflects and shapes cultural values. Readings are selected to
+        foreground diverse voices and traditions.
       </p>
       <div class="course-links">
         <a href="#" class="btn">Syllabus</a>
         <a href="#" class="btn">Course Materials</a>
       </div>
     </div>
-    
+
     <div class="course-item">
-      <h3>COURSE 401: Advanced Topics in [Subject]</h3>
-      <p class="course-meta">Spring 2026 | Graduate Level</p>
+      <h3>EN 4010: Postcolonial Literature and Social Justice</h3>
+      <p class="course-meta">Winter 2026 | Senior Seminar</p>
       <p>
-        A seminar-style course exploring cutting-edge research in [specific area]. 
-        Students engage with recent literature, present research papers, and develop 
-        their own research proposals.
+        An advanced seminar examining how postcolonial writers engage with questions of justice,
+        resistance, and belonging. Students read novels, poetry, and essays from Africa, South Asia,
+        the Caribbean, and the Middle East alongside critical theory. The course culminates in a
+        community-engaged research project connecting literary analysis to contemporary social issues.
       </p>
       <div class="course-links">
         <a href="#" class="btn">Syllabus</a>
@@ -56,21 +65,21 @@ permalink: /teaching/
 <section class="teaching-section">
   <h2>Previous Courses</h2>
   <ul class="previous-courses">
-    <li>COURSE 201: Intermediate [Subject] (Fall 2024)</li>
-    <li>COURSE 301: Research Methods (Spring 2024)</li>
-    <li>COURSE 499: Senior Capstone (Fall 2023)</li>
+    <li>EN 2050: Literary Theory (Winter 2025)</li>
+    <li>EN 3020: Creative Writing — Fiction and Personal Essay (Fall 2024)</li>
+    <li>EN 2080: World Literatures in English (Winter 2024)</li>
   </ul>
 </section>
 
 <section class="teaching-section">
   <h2>Advising</h2>
   <p>
-    I currently advise <strong>3 PhD students</strong>, <strong>5 Master's students</strong>, 
-    and <strong>2 undergraduate research assistants</strong>. I welcome inquiries from 
-    prospective students interested in working on topics related to [research areas].
+    I currently advise <strong>2 PhD students</strong> and <strong>4 MA students</strong>
+    working on topics in postcolonial literature, multilingual writing, and social justice
+    pedagogy. I welcome inquiries from prospective graduate students interested in these areas.
   </p>
   <p>
-    If you're interested in working with me, please review my recent publications and 
+    If you're interested in working with me, please review my recent publications and
     send me an email with your CV and research interests.
   </p>
 </section>
@@ -83,6 +92,20 @@ permalink: /teaching/
 .teaching-section h2 {
   margin-bottom: 1.5rem;
   color: var(--primary-color);
+  padding-bottom: 0.75rem;
+  position: relative;
+  border-bottom: none;
+}
+
+.teaching-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: var(--gradient-accent);
+  border-radius: 2px;
 }
 
 .course-list {
@@ -95,7 +118,32 @@ permalink: /teaching/
   padding: 1.5rem;
   background-color: var(--bg-light);
   border-radius: 8px;
-  border-left: 4px solid var(--secondary-color);
+  border-left: none;
+  border-top: 5px solid var(--secondary-color);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-snappy), box-shadow var(--transition-snappy);
+  position: relative;
+  overflow: hidden;
+}
+
+.course-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--gradient-accent);
+  transition: width var(--transition-snappy);
+}
+
+.course-item:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.course-item:hover::after {
+  width: 100%;
 }
 
 .course-item h3 {

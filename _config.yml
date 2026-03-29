@@ -1,13 +1,13 @@
-title: Dr. Academic Writer
-email: your.email@university.edu
+title: Irem Karabag
+email: ikarabag@yorku.ca
 description: >-
-  Academic portfolio showcasing research, publications, and scholarly work
-  in [Your Field]. Assistant Professor at [Your University].
+  English literature scholar, language & identity researcher, and social justice
+  advocate at York University.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: yourhandle
-github_username: yourusername
-linkedin_username: yourprofile
+twitter_username: ikarabag
+github_username: ikarabag
+linkedin_username: iremkarabag
 google_scholar: your-scholar-id
 orcid: 0000-0000-0000-0000
 

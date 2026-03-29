@@ -1,45 +1,37 @@
 ---
 layout: publication
-title: "Understanding the Impact of Machine Learning on Academic Writing"
-authors: "Your Name, Co-Author Name, Another Author"
-venue: "Journal of Academic Research"
-volume: "15(3)"
-pages: "123-145"
+title: "Tongues Between Worlds: Language and Identity in Contemporary Postcolonial Fiction"
+authors: "Irem Karabag"
+venue: "Journal of Postcolonial Writing"
+volume: "60(2)"
+pages: "214-233"
 date: 2024-06-15
-doi: "10.1234/jar.2024.123"
-pdf: "/assets/pdfs/sample-paper.pdf"
-arxiv: "2406.12345"
-code: "https://github.com/yourusername/project"
-abstract: "This paper explores the transformative effects of machine learning technologies on academic writing practices. Through a comprehensive analysis of recent developments, we demonstrate how AI-assisted tools are reshaping research methodologies and publication workflows. Our findings suggest that while these technologies offer significant efficiency gains, they also raise important questions about authorship, originality, and the future of scholarly communication."
+doi: "10.1080/jpw.2024.0142"
+pdf: "/assets/pdfs/karabag-2024-tongues.pdf"
+abstract: "This article examines how contemporary postcolonial novelists deploy multilingual strategies to articulate fractured identities and resist the dominance of colonial languages. Through close readings of recent works by Chimamanda Ngozi Adichie, Jhumpa Lahiri, and Elif Shafak, I argue that code-switching, untranslated passages, and translingual wordplay function not merely as stylistic choices but as political acts that reclaim narrative authority for marginalized speakers. The analysis reveals how these textual practices challenge monolingual reading norms and open space for what I term 'linguistic sovereignty' within the postcolonial novel."
 citation: |
-  @article{yourname2024understanding,
-    title={Understanding the Impact of Machine Learning on Academic Writing},
-    author={Your Name and Co-Author Name and Another Author},
-    journal={Journal of Academic Research},
-    volume={15},
-    number={3},
-    pages={123--145},
+  @article{karabag2024tongues,
+    title={Tongues Between Worlds: Language and Identity in Contemporary Postcolonial Fiction},
+    author={Karabag, Irem},
+    journal={Journal of Postcolonial Writing},
+    volume={60},
+    number={2},
+    pages={214--233},
     year={2024},
-    publisher={Academic Press}
+    publisher={Routledge}
   }
 ---
 
 ## Introduction
 
-This is where you would provide additional context about your publication, including:
-
-- Background and motivation for the research
-- Key contributions and findings
-- Significance to the field
+How do postcolonial writers navigate the tension between writing in a colonial language and preserving the textures of their mother tongues? This paper investigates that question through a comparative analysis of multilingual literary strategies in contemporary fiction.
 
 ## Key Findings
 
-You can expand on your abstract here with more detailed explanations of your results and their implications.
+- Code-switching in postcolonial novels operates as both a narrative device and a form of political resistance.
+- Untranslated passages invite readers into an experience of linguistic otherness, challenging monolingual expectations.
+- The concept of "linguistic sovereignty" provides a framework for understanding how writers reclaim agency through language choices.
 
 ## Impact
 
-Discuss how this work has been received in the field, citations, follow-up research, or practical applications.
-
-## Related Work
-
-Link to other publications or projects that build on or relate to this research.
+This article has been cited in subsequent studies on translingualism in world literature and has been adopted as a core reading in several graduate seminars on postcolonial literary theory.

@@ -1,51 +1,45 @@
 ---
 layout: project
-title: "Computational Literary Analysis Toolkit"
-description: "An open-source toolkit for analyzing literary texts using natural language processing and machine learning."
-status: "Completed"
-duration: "2021 - 2023"
+title: "Community Literacy Initiative"
+description: "A community-based literacy program providing free reading, writing, and storytelling workshops for immigrant and refugee families in the Greater Toronto Area."
+status: "Active"
+duration: "2021 - Present"
 image: "/assets/images/project-toolkit.jpg"
 featured: true
 collaborators:
-  - "Research Assistant Team"
-  - "Computer Science Department Collaborators"
+  - "Toronto Public Library"
+  - "COSTI Immigrant Services"
+  - "York University Faculty of Education"
 links:
-  - name: "Documentation"
-    url: "https://example.com/toolkit-docs"
-  - name: "GitHub"
-    url: "https://github.com/yourusername/lit-toolkit"
-  - name: "PyPI Package"
-    url: "https://pypi.org/project/lit-toolkit/"
+  - name: "Program Information"
+    url: "https://example.com/community-literacy"
+  - name: "Volunteer Sign-Up"
+    url: "https://example.com/cli-volunteer"
 ---
 
-## About the Toolkit
+## About the Initiative
 
-The Computational Literary Analysis Toolkit (CLAT) is a Python library designed to make advanced text analysis accessible to humanities researchers without extensive programming backgrounds.
+The Community Literacy Initiative (CLI) is a partnership between York University and community organizations across the Greater Toronto Area. We provide free, multilingual literacy programming for newcomer families, with a focus on building confidence, community, and critical literacy skills.
 
-## Features
+## Programs
 
-- **Style Analysis**: Measure and compare authorial style
-- **Topic Modeling**: Discover themes across large corpora
-- **Sentiment Analysis**: Track emotional arcs in narratives
-- **Character Networks**: Visualize character relationships
-- **Comparative Analysis**: Compare texts across multiple dimensions
+- **Family Storytelling Circles**: Weekly workshops where families share stories in their home languages and in English, building bridges between linguistic worlds.
+- **Reading Together**: A parent-child reading program that provides multilingual book kits and guided discussion activities.
+- **Writing for Change**: A youth writing workshop where participants craft personal essays, poetry, and community journalism pieces.
+- **Literacy Mentorship**: One-on-one and small-group academic literacy support for newcomer students transitioning into Canadian schools.
 
-## Usage
+## Reach
 
-```python
-from clat import TextAnalyzer
+Since 2021, the CLI has served over 800 participants across six community sites in Toronto, Scarborough, and North York. Our volunteer corps includes more than 50 York University students who gain community-engaged learning credit through their participation.
 
-# Load and analyze a text
-analyzer = TextAnalyzer("path/to/novel.txt")
-style = analyzer.get_style_metrics()
-topics = analyzer.topic_model(n_topics=10)
-sentiment = analyzer.sentiment_over_time()
-```
+## Research Connection
 
-## Impact
+The CLI is also a site of community-based participatory research. With informed consent, we study how multilingual literacy practices support identity formation, belonging, and civic participation among newcomer families. Findings feed back into program design and inform policy advocacy on language rights.
 
-The toolkit has been downloaded over 5,000 times and is used by researchers at universities worldwide. It has been featured in workshops at major digital humanities conferences.
+## Partners
 
-## Future Development
+We are grateful for the support of our community partners, York University's Office of Community Engagement, and the Ontario Trillium Foundation.
 
-While the initial project is complete, we continue to maintain the toolkit and welcome community contributions through our GitHub repository.
+## Get Involved
+
+We are always looking for volunteers, partner organizations, and funding support. Whether you can commit to a weekly workshop or a one-time event, your help makes a difference. [Contact us](mailto:ikarabag@yorku.ca) to learn more.

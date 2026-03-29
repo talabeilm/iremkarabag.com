@@ -25,16 +25,19 @@ title: Home
     <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Profile Photo" class="profile-photo">
     <div class="about-text">
       <p>
-        I am an Assistant Professor of [Your Field] at [Your University], where I research 
-        [your research interests]. My work focuses on [specific areas], with particular emphasis 
-        on [key themes].
+        I am an Associate Professor of English at <strong>York University</strong>, where I research
+        the intersections of language, identity, and power in postcolonial and contemporary literature.
+        My work bridges literary scholarship and social justice, examining how narrative shapes — and is
+        shaped by — the struggles of marginalized communities.
       </p>
       <p>
-        Before joining [University], I completed my PhD at [PhD Institution] under the supervision 
-        of [Advisor Name]. My dissertation examined [dissertation topic].
+        Beyond the classroom, I am an active advocate for immigrant language rights, community literacy,
+        and equity in education. I believe that literature and language are not only subjects of study
+        but vital tools for social transformation.
       </p>
       <p>
-        <strong>Research Interests:</strong> [Interest 1], [Interest 2], [Interest 3], [Interest 4]
+        <strong>Research Interests:</strong> Language and Identity in Postcolonial Literature,
+        Narrative and Social Justice, Multilingualism in Literary Texts, Critical Pedagogy
       </p>
     </div>
   </div>
@@ -48,7 +51,7 @@ title: Home
     <div class="publication-item">
       <h3><a href="{{ pub.url | relative_url }}">{{ pub.title }}</a></h3>
       <p class="publication-meta">
-        {{ pub.authors }} ({{ pub.date | date: "%Y" }}). 
+        {{ pub.authors }} ({{ pub.date | date: "%Y" }}).
         <em>{{ pub.venue }}</em>{% if pub.volume %}, {{ pub.volume }}{% endif %}{% if pub.pages %}, {{ pub.pages }}{% endif %}.
       </p>
       {% if pub.abstract %}
@@ -61,7 +64,7 @@ title: Home
 </section>
 
 <section class="home-section">
-  <h2>Current Projects</h2>
+  <h2>Research & Activism</h2>
   <div class="projects-grid">
     {% assign featured_projects = site.projects | where: "featured", true | limit: 3 %}
     {% for project in featured_projects %}

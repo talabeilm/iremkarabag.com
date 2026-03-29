@@ -52,12 +52,6 @@ permalink: /publications/
 </div>
 
 <style>
-.page-header {
-  margin-bottom: 3rem;
-  padding-bottom: 1rem;
-  border-bottom: 3px solid var(--secondary-color);
-}
-
 .publications-year {
   margin-bottom: 3rem;
 }
@@ -73,18 +67,21 @@ permalink: /publications/
 .link-btn {
   display: inline-block;
   padding: 0.4rem 0.8rem;
-  background-color: var(--bg-light);
+  background-color: transparent;
   color: var(--secondary-color);
+  border: 1.5px solid var(--secondary-color);
   border-radius: 4px;
   font-size: 0.85rem;
   font-weight: 600;
   margin-right: 0.5rem;
   margin-top: 0.5rem;
-  transition: all 0.3s ease;
+  transition: all var(--transition-snappy);
 }
 
 .link-btn:hover {
   background-color: var(--secondary-color);
   color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(192, 57, 43, 0.25);
 }
 </style>
