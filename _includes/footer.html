@@ -13,6 +13,7 @@
           <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
           <li><a href="{{ '/activism/' | relative_url }}">Activism</a></li>
           <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+          <li><a href="{{ '/newsletter/' | relative_url }}">Newsletter</a></li>
           <li><a href="{{ '/cv.pdf' | relative_url }}">CV</a></li>
         </ul>
       </div>
@@ -26,14 +27,14 @@
           {% if site.twitter_username %}
           <li><a href="https://twitter.com/{{ site.twitter_username }}" target="_blank">Twitter</a></li>
           {% endif %}
-          {% if site.github_username %}
-          <li><a href="https://github.com/{{ site.github_username }}" target="_blank">GitHub</a></li>
-          {% endif %}
           {% if site.linkedin_username %}
           <li><a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank">LinkedIn</a></li>
           {% endif %}
+          {% if site.substack_url %}
+          <li><a href="https://{{ site.substack_url }}" target="_blank">Substack</a></li>
+          {% endif %}
           {% if site.google_scholar %}
-          <li><a href="https://scholar.google.com/citations?user={{ site.google_scholar }}" target="_blank">Google Scholar</a></li>
+          <li><a href="https://scholar.google.com/citations?user=_yFFf0QAAAAJ&hl=en" target="_blank">Google Scholar</a></li>
           {% endif %}
         </ul>
       </div>

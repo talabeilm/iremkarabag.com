@@ -1,15 +1,15 @@
-title: Irem Karabag
-email: ikarabag@yorku.ca
+title: Ayse Irem Karabag
+email: airemka@yorku.ca
 description: >-
-  English literature scholar, language & identity researcher, and social justice
-  advocate at York University.
+  Doctoral student in English at York University, researching critical refugee
+  studies, queer/gender studies, and world literature.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ikarabag
-github_username: ikarabag
-linkedin_username: iremkarabag
-google_scholar: your-scholar-id
+linkedin_username: ayse-irem-karabag-38a937113
 orcid: 0000-0000-0000-0000
+google_scholar: _yFFf0QAAAAJ
+substack_url: iremkarabag.substack.com
 
 # Build settings
 markdown: kramdown
