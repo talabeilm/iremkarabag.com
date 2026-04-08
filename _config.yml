@@ -1,15 +1,53 @@
 title: Ayse Irem Karabag
+tagline: Dispatches on refugee worldmaking, literature, and resistance
 email: airemka@yorku.ca
 description: >-
-  Doctoral student in English at York University, researching critical refugee
-  studies, queer/gender studies, and world literature.
+  Ayse Irem Karabag is a doctoral student and teaching assistant in the
+  Department of English at York University. Her research examines critical
+  refugee studies, queer and gender studies, and world literature, with a focus
+  on narratives of resistance and refugee worldmaking.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://iremkarabag.com" # the base hostname & protocol for your site
+lang: en
+locale: en_US
+timezone: America/Toronto
+
+# Identity / social
+author:
+  name: Ayse Irem Karabag
+  email: airemka@yorku.ca
+  url: https://iremkarabag.com
+  twitter: ikarabag
+twitter:
+  username: ikarabag
+  card: summary_large_image
+social:
+  name: Ayse Irem Karabag
+  links:
+    - https://twitter.com/ikarabag
+    - https://www.linkedin.com/in/ayse-irem-karabag-38a937113
+    - https://scholar.google.com/citations?user=_yFFf0QAAAAJ
+    - https://iremkarabag.substack.com
+    - https://www.yorku.ca/laps/en/teaching-assistant/ayse-irem-karabag/
+
+logo: /assets/images/profile.jpg
+image: /assets/images/profile.jpg
+
 twitter_username: ikarabag
 linkedin_username: ayse-irem-karabag-38a937113
 orcid: 0000-0000-0000-0000
 google_scholar: _yFFf0QAAAAJ
 substack_url: iremkarabag.substack.com
+
+# SEO keywords (jekyll-seo-tag will use these)
+keywords: >-
+  refugee studies, critical refugee studies, queer studies, gender studies,
+  world literature, narratives of resistance, refugee worldmaking, York University,
+  Ayse Irem Karabag, Irem Karabag, doctoral student, English literature,
+  postcolonial literature, comparative literature
+
+# Optional: Google Search Console verification (paste meta tag content here)
+google_site_verification: ""
 
 # Build settings
 markdown: kramdown
@@ -37,19 +75,26 @@ collections:
 defaults:
   - scope:
       path: ""
+    values:
+      image: /assets/images/profile.jpg
+  - scope:
+      path: ""
       type: "publications"
     values:
       layout: "publication"
+      image: /assets/images/profile.jpg
   - scope:
       path: ""
       type: "projects"
     values:
       layout: "project"
+      image: /assets/images/profile.jpg
   - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
+      image: /assets/images/profile.jpg
 
 # Exclude from processing
 exclude:

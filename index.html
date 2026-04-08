@@ -3,103 +3,73 @@ layout: default
 title: Home
 ---
 
-<div class="home-hero">
-  <div class="hero-content">
-    <h1>{{ site.title }}</h1>
-    <p class="lead">{{ site.description }}</p>
-    <div class="hero-links">
-      {% if site.google_scholar %}
-      <a href="https://scholar.google.com/citations?user={{ site.google_scholar }}" target="_blank" class="btn">Google Scholar</a>
-      {% endif %}
-      {% if site.orcid %}
-      <a href="https://orcid.org/{{ site.orcid }}" target="_blank" class="btn">ORCID</a>
-      {% endif %}
-      <a href="{{ '/cv.pdf' | relative_url }}" class="btn">Download CV</a>
-    </div>
-  </div>
-</div>
-
-<section class="home-section">
-  <h2>About</h2>
-  <div class="about-content">
-    <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Profile Photo" class="profile-photo">
-    <div class="about-text">
-      <p>
-        I am a doctoral student and teaching assistant in the <strong>Department of English</strong> at
-        <strong>York University</strong>, specializing in critical refugee studies, queer and gender
-        studies, and world literature. My research examines narratives of resistance and refugee
-        worldmaking, exploring how displaced communities use storytelling to reclaim agency and
-        build new forms of belonging.
+<section class="intro reveal">
+  <div class="intro-inner">
+    <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Ayse Irem Karabag" class="intro-photo">
+    <div class="intro-text">
+      <h1 class="intro-title">Ayse Irem Karabag</h1>
+      <p class="intro-lede">
+        Doctoral student &amp; teaching assistant in the Department of English at
+        York University. I write on refugee worldmaking, queer and gender
+        studies, world literature, and narratives of resistance. Dispatches from
+        Toronto.
       </p>
-      <p>
-        I also work as a project writer at the <strong>Local Engagement Refugee Research Network
-        (LERRN)</strong> at Carleton University. My work has been published in <em>Diyalektolog</em>
-        and the <em>Canadian Review of Comparative Literature</em>. I hold an MA in English and
-        Transcultural Studies from Heidelberg University and a BA from Bogazici University (2017).
+      <p class="intro-affiliations">
+        Also a project writer at the Local Engagement Refugee Research Network
+        (LERRN), Carleton University. Published in <em>Diyalektolog</em>,
+        <em>Pivot</em>, and <em>The Capilano Review</em>.
       </p>
-      <p>
-        <strong>Research Interests:</strong> Critical Refugee Studies, Queer &amp; Gender Studies,
-        World Literature, Narratives of Resistance, Refugee Worldmaking
-      </p>
+      <ul class="intro-links">
+        <li><a href="{{ '/cv.pdf' | relative_url }}">CV (PDF)</a></li>
+        <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        {% if site.google_scholar %}
+        <li><a href="https://scholar.google.com/citations?user={{ site.google_scholar }}" target="_blank" rel="noopener">Google Scholar</a></li>
+        {% endif %}
+        {% if site.substack_url %}
+        <li><a href="https://{{ site.substack_url }}" target="_blank" rel="noopener">Newsletter</a></li>
+        {% endif %}
+      </ul>
     </div>
   </div>
 </section>
 
-<section class="home-section">
-  <h2>Recent Publications</h2>
-  <div class="publications-list">
-    {% assign recent_pubs = site.publications | sort: 'date' | reverse | limit: 3 %}
-    {% for pub in recent_pubs %}
-    <div class="publication-item">
-      <h3><a href="{{ pub.url | relative_url }}">{{ pub.title }}</a></h3>
-      <p class="publication-meta">
-        {{ pub.authors }} ({{ pub.date | date: "%Y" }}).
-        <em>{{ pub.venue }}</em>{% if pub.volume %}, {{ pub.volume }}{% endif %}{% if pub.pages %}, {{ pub.pages }}{% endif %}.
-      </p>
-      {% if pub.abstract %}
-      <p class="publication-abstract">{{ pub.abstract | truncatewords: 30 }}</p>
-      {% endif %}
-    </div>
+<section class="tile-section reveal" id="publications">
+  <h2 class="tile-section-title">Publications</h2>
+  <div class="explore-blocks">
+    {% assign all_pubs = site.publications | sort: 'date' | reverse %}
+    {% for pub in all_pubs %}
+    <a href="{{ pub.url | relative_url }}" class="box big publication">
+      <span class="type">Publication</span>
+      <div class="title">{{ pub.title }}</div>
+      <div class="meta">
+        {% if pub.date %}{{ pub.date | date: "%Y" }}{% endif %}
+        {% if pub.venue %} &middot; {{ pub.venue }}{% endif %}
+      </div>
+    </a>
     {% endfor %}
   </div>
-  <p class="view-all"><a href="{{ '/publications/' | relative_url }}">View all publications →</a></p>
 </section>
 
-<section class="home-section">
-  <h2>Research & Activism</h2>
-  <div class="projects-grid">
-    {% assign featured_projects = site.projects | where: "featured", true | limit: 3 %}
-    {% for project in featured_projects %}
-    <div class="project-card">
-      {% if project.image %}
-      <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
-      {% endif %}
-      <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
-      <p>{{ project.description | truncatewords: 25 }}</p>
-    </div>
+<section class="tile-section reveal" id="projects">
+  <h2 class="tile-section-title">Research &amp; Projects</h2>
+  <div class="explore-blocks">
+    {% for project in site.projects %}
+    <a href="{{ project.url | relative_url }}" class="box big project">
+      <span class="type">Project</span>
+      <div class="title">{{ project.title }}</div>
+      {% if project.status %}<div class="meta">{{ project.status }}</div>{% endif %}
+    </a>
     {% endfor %}
   </div>
-  <p class="view-all"><a href="{{ '/projects/' | relative_url }}">View all projects →</a></p>
 </section>
 
-<section class="home-section">
-  <h2>From My Newsletter</h2>
-  <div class="substack-feed" id="substack-feed-home" data-limit="3">
-    <p class="substack-loading">Loading recent posts...</p>
-  </div>
-  <p class="view-all"><a href="{{ '/newsletter/' | relative_url }}">View all newsletter posts →</a></p>
-</section>
-
-<section class="home-section">
-  <h2>Recent Blog Posts</h2>
-  <div class="posts-list">
-    {% for post in site.posts limit: 3 %}
-    <div class="post-item">
-      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-      <p class="post-meta">{{ post.date | date: "%B %d, %Y" }}</p>
-      <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+<section class="tile-section reveal" id="newsletter">
+  <h2 class="tile-section-title">From the Newsletter</h2>
+  <div class="explore-blocks substack-feed" id="substack-feed-home" data-limit="4" data-variant="newsletter">
+    <div class="box big newsletter feed-item-loading">
+      <span class="type">Newsletter</span>
+      <div class="title">Loading recent posts&hellip;</div>
     </div>
-    {% endfor %}
   </div>
-  <p class="view-all"><a href="{{ '/blog/' | relative_url }}">View all posts →</a></p>
+  <p class="view-all"><a href="{{ '/newsletter/' | relative_url }}">All newsletter posts &rarr;</a></p>
 </section>

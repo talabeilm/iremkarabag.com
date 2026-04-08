@@ -1,48 +1,26 @@
 <footer class="site-footer">
   <div class="container">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>{{ site.title }}</h3>
-        <p>{{ site.description }}</p>
-      </div>
-
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="{{ '/publications/' | relative_url }}">Publications</a></li>
-          <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
-          <li><a href="{{ '/activism/' | relative_url }}">Activism</a></li>
-          <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
-          <li><a href="{{ '/newsletter/' | relative_url }}">Newsletter</a></li>
-          <li><a href="{{ '/cv.pdf' | relative_url }}">CV</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-section">
-        <h3>Connect</h3>
-        <ul class="social-links">
-          {% if site.email %}
-          <li><a href="mailto:{{ site.email }}">Email</a></li>
-          {% endif %}
-          {% if site.twitter_username %}
-          <li><a href="https://twitter.com/{{ site.twitter_username }}" target="_blank">Twitter</a></li>
-          {% endif %}
-          {% if site.linkedin_username %}
-          <li><a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank">LinkedIn</a></li>
-          {% endif %}
-          {% if site.substack_url %}
-          <li><a href="https://{{ site.substack_url }}" target="_blank">Substack</a></li>
-          {% endif %}
-          {% if site.google_scholar %}
-          <li><a href="https://scholar.google.com/citations?user=_yFFf0QAAAAJ&hl=en" target="_blank">Google Scholar</a></li>
-          {% endif %}
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
-      <p>Built with <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> and hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
-    </div>
+    <p class="footer-colophon">
+      Independently written &amp; published from Toronto.
+    </p>
+    <ul class="footer-links">
+      {% if site.email %}
+      <li><a href="mailto:{{ site.email }}">Email</a></li>
+      {% endif %}
+      {% if site.twitter_username %}
+      <li><a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" rel="noopener">Twitter</a></li>
+      {% endif %}
+      {% if site.linkedin_username %}
+      <li><a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener">LinkedIn</a></li>
+      {% endif %}
+      {% if site.substack_url %}
+      <li><a href="https://{{ site.substack_url }}" target="_blank" rel="noopener">Substack</a></li>
+      {% endif %}
+      {% if site.google_scholar %}
+      <li><a href="https://scholar.google.com/citations?user={{ site.google_scholar }}&hl=en" target="_blank" rel="noopener">Scholar</a></li>
+      {% endif %}
+      <li><a href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
+    </ul>
+    <p class="footer-copy">&copy; {{ 'now' | date: "%Y" }} {{ site.title }}</p>
   </div>
 </footer>

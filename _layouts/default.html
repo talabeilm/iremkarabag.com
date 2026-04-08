@@ -1,21 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ site.lang | default: 'en' }}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <meta name="theme-color" content="#3A1E5C">
+  <meta name="color-scheme" content="light">
+
+  {%- comment -%} jekyll-seo-tag handles title, description, canonical, og, twitter card {%- endcomment -%}
   {% seo %}
   {% feed_meta %}
+
+  {%- comment -%} Additional SEO / discovery meta {%- endcomment -%}
+  <meta name="author" content="{{ site.author.name | default: site.title }}">
+  <meta name="keywords" content="{{ page.keywords | default: site.keywords }}">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+  {% if site.google_site_verification and site.google_site_verification != "" %}
+  <meta name="google-site-verification" content="{{ site.google_site_verification }}">
+  {% endif %}
+
+  {%- comment -%} Open Graph fallbacks (jekyll-seo-tag covers most, add the rest) {%- endcomment -%}
+  <meta property="og:locale" content="{{ site.locale | default: 'en_US' }}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="profile:first_name" content="Ayse Irem">
+  <meta property="profile:last_name" content="Karabag">
+  <meta property="profile:gender" content="female">
+
+  {%- comment -%} JSON-LD structured data — Person schema for Google Knowledge Panel {%- endcomment -%}
+  {% if page.url == "/" or page.title == "Home" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ayse Irem Karabag",
+    "alternateName": ["Irem Karabag", "Ayşe İrem Karabağ"],
+    "givenName": "Ayse Irem",
+    "familyName": "Karabag",
+    "gender": "Female",
+    "url": "{{ site.url }}{{ site.baseurl }}/",
+    "image": "{{ site.url }}{{ site.baseurl }}{{ site.image }}",
+    "email": "mailto:{{ site.email }}",
+    "jobTitle": "Doctoral Student & Teaching Assistant",
+    "description": {{ site.description | strip_newlines | jsonify }},
+    "worksFor": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "York University",
+        "department": "Department of English",
+        "url": "https://www.yorku.ca/laps/en/teaching-assistant/ayse-irem-karabag/"
+      },
+      {
+        "@type": "Organization",
+        "name": "Local Engagement Refugee Research Network (LERRN)",
+        "url": "https://carleton.ca/lerrn/"
+      }
+    ],
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Heidelberg University",
+        "description": "MA in English and Transcultural Studies"
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Bogazici University",
+        "description": "BA in English"
+      }
+    ],
+    "knowsAbout": [
+      "Critical Refugee Studies",
+      "Queer and Gender Studies",
+      "World Literature",
+      "Narratives of Resistance",
+      "Refugee Worldmaking",
+      "Postcolonial Literature",
+      "Comparative Literature"
+    ],
+    "sameAs": [
+      "https://twitter.com/{{ site.twitter_username }}",
+      "https://www.linkedin.com/in/{{ site.linkedin_username }}",
+      "https://scholar.google.com/citations?user={{ site.google_scholar }}",
+      "https://{{ site.substack_url }}",
+      "https://www.yorku.ca/laps/en/teaching-assistant/ayse-irem-karabag/"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "{{ site.title }}",
+    "url": "{{ site.url }}{{ site.baseurl }}/",
+    "description": {{ site.description | strip_newlines | jsonify }},
+    "inLanguage": "{{ site.lang | default: 'en' }}",
+    "author": {
+      "@type": "Person",
+      "name": "Ayse Irem Karabag"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Ayse Irem Karabag"
+    }
+  }
+  </script>
+  {% endif %}
+
+  {% if page.layout == "publication" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": {{ page.title | jsonify }},
+    "author": {
+      "@type": "Person",
+      "name": "{{ page.authors | default: 'Ayse Irem Karabag' }}"
+    },
+    "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
+    {% if page.venue %}"isPartOf": {
+      "@type": "Periodical",
+      "name": {{ page.venue | jsonify }}
+    },{% endif %}
+    {% if page.abstract %}"abstract": {{ page.abstract | strip_newlines | jsonify }},{% endif %}
+    "url": "{{ site.url }}{{ site.baseurl }}{{ page.url }}",
+    "publisher": {
+      "@type": "Person",
+      "name": "Ayse Irem Karabag"
+    }
+  }
+  </script>
+  {% endif %}
+
+  {% if page.layout == "post" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": {{ page.title | jsonify }},
+    "datePublished": "{{ page.date | date_to_xmlschema }}",
+    "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+    "author": {
+      "@type": "Person",
+      "name": "Ayse Irem Karabag",
+      "url": "{{ site.url }}{{ site.baseurl }}/"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Ayse Irem Karabag"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ site.url }}{{ site.baseurl }}{{ page.url }}"
+    },
+    "image": "{{ site.url }}{{ site.baseurl }}{{ site.image }}",
+    {% if page.excerpt %}"description": {{ page.excerpt | strip_html | strip_newlines | jsonify }}{% endif %}
+  }
+  </script>
+  {% endif %}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="icon" type="image/jpeg" href="{{ '/assets/images/profile.jpg' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/assets/images/profile.jpg' | relative_url }}">
 </head>
 <body>
   {% include header.html %}
   
   <main class="main-content">
-    {{ content }}
+    {% if page.title == "Home" %}
+    <div class="container container-wide">
+      {{ content }}
+    </div>
+    {% else %}
+    <div class="container">
+      {{ content }}
+    </div>
+    {% endif %}
   </main>
   
   {% include footer.html %}

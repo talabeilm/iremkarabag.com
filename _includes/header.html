@@ -1,24 +1,33 @@
 <header class="site-header">
   <div class="container">
-    <div class="header-content">
-      <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
+    <div class="header-top">
+      <a href="{{ '/' | relative_url }}" class="site-brand">
+        <span class="site-brand-mark" aria-hidden="true">✺</span>
+        <span class="site-brand-name">{{ site.title }}</span>
+      </a>
       <button class="mobile-menu-toggle" aria-label="Toggle menu">
         <span></span>
         <span></span>
         <span></span>
       </button>
-      <nav class="site-nav">
+      <nav class="site-nav-primary" aria-label="Utility">
         <ul>
-          <li><a href="{{ '/' | relative_url }}">Home</a></li>
-          <li><a href="{{ '/publications/' | relative_url }}">Publications</a></li>
-          <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
-          <li><a href="{{ '/activism/' | relative_url }}">Activism</a></li>
-          <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
-          <li><a href="{{ '/newsletter/' | relative_url }}">Newsletter</a></li>
-          <li><a href="{{ '/teaching/' | relative_url }}">Teaching</a></li>
-          <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+          <li><a href="{{ '/contact/' | relative_url }}"{% if page.url contains '/contact/' %} class="active" aria-current="page"{% endif %}>Contact</a></li>
+          {% if site.substack_url %}
+          <li><a href="https://{{ site.substack_url }}" target="_blank" rel="noopener">Subscribe</a></li>
+          {% endif %}
+          <li><a href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
         </ul>
       </nav>
     </div>
+    <nav class="site-nav-secondary" aria-label="Sections">
+      <ul>
+        <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active" aria-current="page"{% endif %}>Home</a></li>
+        <li><a href="{{ '/publications/' | relative_url }}"{% if page.url contains '/publications/' %} class="active" aria-current="page"{% endif %}>Publications</a></li>
+        <li><a href="{{ '/projects/' | relative_url }}"{% if page.url contains '/projects/' %} class="active" aria-current="page"{% endif %}>Projects</a></li>
+        <li><a href="{{ '/newsletter/' | relative_url }}"{% if page.url contains '/newsletter/' %} class="active" aria-current="page"{% endif %}>Newsletter</a></li>
+        <li><a href="{{ '/teaching/' | relative_url }}"{% if page.url contains '/teaching/' %} class="active" aria-current="page"{% endif %}>Teaching</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
